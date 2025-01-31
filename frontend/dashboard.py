@@ -63,7 +63,7 @@ def dashboard_page():
  
             web_scraping_option = st.selectbox(
                 'Select Web Scraping Option',
-                ('Select Option', 'Selenium', 'ScrapingBee'),
+                ('Select Option', 'BeautifulSoup', 'ScrapingBee', 'Selenium'),
                 index=0
             )
             

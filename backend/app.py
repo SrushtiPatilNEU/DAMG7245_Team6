@@ -13,6 +13,7 @@ from azurePdfScraping import extract_pdf_data, save_markdown_data
 from openSourcePdf import extract_data, save_to_md
 from seleniumScraping import selenium_scraping
 from scrapingBee import scrape_page
+from webBeautifulSoup import extract_and_store_to_markdown
 
 # Load environment variables
 load_dotenv(override=True)
@@ -125,15 +126,6 @@ async def opensource_pdf_scrape(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-
-
-
-
-
-
-
-
-
 @app.post("/web/scrape")
 async def web_scrape(request: WebScrapingRequest):
     try:
@@ -141,12 +133,19 @@ async def web_scrape(request: WebScrapingRequest):
             # Call selenium scraping
             markdown_content, images = selenium_scraping(request.url)
             folder = "web_scraping/selenium"
+
         elif request.method == "ScrapingBee":
             if not SCRAPINGBEE_API_KEY:
                 raise HTTPException(status_code=400, detail="ScrapingBee API key not configured")
             # Call scrapingbee scraping
             markdown_content, images = scrape_page(request.url, SCRAPINGBEE_API_KEY)
             folder = "web_scraping/scrapingbee"
+
+        elif request.method == "BeautifulSoup":
+            # Call selenium scraping
+            markdown_content, images = extract_and_store_to_markdown(request.url)
+            folder = "web_scraping/beautifulsoup"
+
         else:
             raise HTTPException(status_code=400, detail="Invalid Scraping Method")
         
@@ -171,6 +170,8 @@ async def web_scrape(request: WebScrapingRequest):
                 image_url = upload_to_s3(img_data, "web_scraping/selenium/images", image_filename, "image/jpeg")
             elif request.method == "ScrapingBee":
                 image_url = upload_to_s3(img_data, "web_scraping/scrapingbee/images", image_filename, "image/jpeg")
+            elif request.method == "BeautifulSoup":
+                image_url = upload_to_s3(img_data, "web_scraping/beautifulsoup/images", image_filename, "image/jpeg")
 
             image_urls.append(image_url)
         
