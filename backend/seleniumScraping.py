@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-import requests
+import os
 
 def selenium_scraping(url):
     # Set up Chrome options
@@ -14,6 +14,9 @@ def selenium_scraping(url):
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--window-size=1920,1080")
+
+    # Manually specify the Chromium binary path
+    chrome_options.binary_location = "/usr/bin/chromium"
 
     try:
         # Set up the Chrome driver
