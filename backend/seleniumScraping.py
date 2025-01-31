@@ -10,9 +10,10 @@ import requests
 def selenium_scraping(url):
     # Set up Chrome options
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless=new")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--window-size=1920,1080")
 
     try:
         # Set up the Chrome driver
@@ -23,6 +24,12 @@ def selenium_scraping(url):
 
         # Wait for the page to load completely
         WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+
+        # Scroll to the bottom of the page to load any lazy-loaded content
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        
+        # Wait for a short time to allow dynamic content to load
+        driver.implicitly_wait(5)
 
         markdown_content = f"# Extracted Content from {url}\n\n"
         image_urls = []
@@ -40,7 +47,7 @@ def selenium_scraping(url):
             markdown_content += f"### Table {table_index}\n\n"
             rows = table.find_elements(By.TAG_NAME, "tr")
             for row in rows:
-                columns = row.find_elements(By.TAG_NAME, "td")
+                columns = row.find_elements(By.TAG_NAME, "td") or row.find_elements(By.TAG_NAME, "th")
                 row_data = [col.text.strip() for col in columns]
                 markdown_content += "| " + " | ".join(row_data) + " |\n"
             markdown_content += "\n"
