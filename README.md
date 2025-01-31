@@ -57,7 +57,7 @@ Then run Streamlit (streamlit run dashboard.py)
 
 Project Structure
 
-.
+'
 ├── Documentation
 │   └── ToolComparison.docx
 ├── __pycache__
@@ -140,7 +140,7 @@ Project Structure
 │   └── share
 │       └── jupyter
 └── vercel.json
-
+'
 18 directories, 65 files
 
 
