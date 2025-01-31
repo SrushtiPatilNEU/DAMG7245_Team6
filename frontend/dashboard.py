@@ -38,7 +38,9 @@ def dashboard_page():
                 if pdf_file:
                     with st.spinner(f"Scraping '{pdf_file.name}' in progress..."):
                         files = {"file": pdf_file.getvalue()}
-                        endpoint = f"http://localhost:8000/pdf/{pdf_scraping_option.lower()}-scrape"
+                        endpoint = f"https://damg7245-team6.onrender.com/pdf/{pdf_scraping_option.lower()}-scrape"
+                        ##endpoint = f"http://localhost:8000/pdf/{pdf_scraping_option.lower()}-scrape"
+                       
                         response = requests.post(endpoint, files=files)
                         
                         if response.status_code == 200:
@@ -80,8 +82,9 @@ def dashboard_page():
                             }
                             
                             # Make the POST request to the FastAPI server
-                            response = requests.post("http://localhost:8000/web/scrape", json=request_data)
-                            
+                            response = requests.post("https://damg7245-team6.onrender.com/web/scrape", json=request_data)
+                            ##response = requests.post("http://localhost:8000/web/scrape", json=request_data)
+
                             # Handle the response from FastAPI
                             if response.status_code == 200:
                                 data = response.json()
