@@ -1,0 +1,85 @@
+.
+├── Documentation
+│   └── ToolComparison.docx
+├── __pycache__
+│   ├── auth.cpython-313.pyc
+│   ├── azurePdfScraping.cpython-312.pyc
+│   ├── azurePdfScraping.cpython-313.pyc
+│   ├── doclingScraping.cpython-312.pyc
+│   ├── doclingScraping.cpython-313.pyc
+│   ├── openSourcePdf.cpython-312.pyc
+│   ├── openSourcePdf.cpython-313.pyc
+│   ├── scrapingBee.cpython-312.pyc
+│   ├── scrapingBee.cpython-313.pyc
+│   ├── selenium.cpython-312.pyc
+│   ├── seleniumScraping.cpython-312.pyc
+│   └── seleniumScraping.cpython-313.pyc
+├── backend
+│   ├── __pycache__
+│   │   ├── app.cpython-313.pyc
+│   │   ├── azurePdfScraping.cpython-313.pyc
+│   │   ├── doclingScraping.cpython-313.pyc
+│   │   ├── openSourcePdf.cpython-313.pyc
+│   │   ├── scrapingBee.cpython-313.pyc
+│   │   └── seleniumScraping.cpython-313.pyc
+│   ├── app.py
+│   ├── azurePdfScraping.py
+│   ├── extracted_data.md
+│   ├── file.pdf
+│   ├── openSourcePdf.py
+│   ├── scrapingBee.py
+│   └── seleniumScraping.py
+├── diagrams
+│   ├── ai_application_data_pipeline.png
+│   ├── architecture_diagram.ipynb
+│   ├── azure.png
+│   ├── docling.png
+│   ├── markitdown.png
+│   ├── pymupdf.png
+│   ├── scrapingbee.png
+│   ├── selenium.png
+│   └── streamlit.png
+├── directory_structure.txt
+├── doclingScraping.py
+├── frontend
+│   └── dashboard.py
+├── requirements.txt
+├── venv
+│   ├── bin
+│   │   ├── Activate.ps1
+│   │   ├── __pycache__
+│   │   ├── activate
+│   │   ├── activate.csh
+│   │   ├── activate.fish
+│   │   ├── dotenv
+│   │   ├── f2py
+│   │   ├── fastapi
+│   │   ├── jp.py
+│   │   ├── jsonschema
+│   │   ├── markdown-it
+│   │   ├── normalizer
+│   │   ├── numpy-config
+│   │   ├── pip
+│   │   ├── pip3
+│   │   ├── pip3.13
+│   │   ├── pygmentize
+│   │   ├── pymupdf
+│   │   ├── python -> python3.13
+│   │   ├── python3 -> python3.13
+│   │   ├── python3.13 -> /Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13
+│   │   ├── streamlit
+│   │   ├── streamlit.cmd
+│   │   ├── uvicorn
+│   │   └── wsdump
+│   ├── etc
+│   │   └── jupyter
+│   ├── include
+│   │   └── python3.13
+│   ├── lib
+│   │   └── python3.13
+│   ├── pyvenv.cfg
+│   └── share
+│       └── jupyter
+└── vercel.json
+
+18 directories, 65 files
