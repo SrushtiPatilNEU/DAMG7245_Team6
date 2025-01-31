@@ -67,8 +67,8 @@ To validate the feasibility of using **open-source and enterprise tools** for **
 ---
 
 ## 🏗️ Architecture Diagram
-![Architecture Diagram](diagrams/![ai_application_data_pipeline](https://github.com/user-attachments/assets/540fa59f-6a16-461d-965f-8ce68f3bbda5)
-.png)
+![ai_application_data_pipeline](https://github.com/user-attachments/assets/540fa59f-6a16-461d-965f-8ce68f3bbda5)
+
 
 ---
 
