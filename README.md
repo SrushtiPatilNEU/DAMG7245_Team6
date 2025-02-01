@@ -2,7 +2,13 @@
 
 ## 📖 Project Summary
 This project aims to compare and document the efficiency, accuracy, and scalability of **open-source vs. enterprise solutions** for **PDF processing and web scraping**, with data stored in an **AWS S3 bucket**. The project will evaluate performance differences between **PyMuPDF vs. Azure AI Document Intelligence** for PDF processing and **Selenium vs. ScrapingBee** for web scraping.
+---
+## Links 
+Codelabs :(https://codelabs-preview.appspot.com/?file_id=1FKk1KolvJ31jqOHasGjI1zK_6DMxofXJ7B4GtaxzDDQ#8)
 
+Front-end and Back-end: (https://damg7245team6-abhwdmwq6mguboi54esmrs.streamlit.app/)
+
+Video : (https://youtu.be/LoulxoUAFG4)
 
 
 ---
